@@ -1,7 +1,10 @@
 var express = require('express'), 
-    app    = express(), 
-    server = require('http').createServer(app), 
-    path   = require('path')
+    app     = express(), 
+    server  = require('http').createServer(app), 
+    path    = require('path'),
+    io      = require('socket.io').listen(server),
+    spawn   = require('child_process').spawn
+    
     
 // all environments
 app.set('port', process.env.TEST_PORT || 8080);
