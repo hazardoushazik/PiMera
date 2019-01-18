@@ -9,7 +9,7 @@ var express = require('express'),
     
 // all environments
 app.set('port', process.env.TEST_PORT || 8080);
-app.use(favicon());
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
