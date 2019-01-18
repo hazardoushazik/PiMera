@@ -11,7 +11,7 @@ var express = require('express'),
     
 // all environments
 app.set('port', process.env.TEST_PORT || 8080);
-app.use(favicon(__dirname + '/public'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
