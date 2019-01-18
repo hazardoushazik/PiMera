@@ -16,7 +16,7 @@ app.set('port', process.env.TEST_PORT || 8080);
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser());
-app.use(express.methodOverride());
+app.use(methodOverride());
 app.use(static(path.join(__dirname, 'public')));
 
 // routes
