@@ -1,5 +1,5 @@
 var express = require('express'), 
-    favicon = require('favicon')
+    favicon = require('serve-favicon')
     app     = express(), 
     server  = require('http').createServer(app), 
     path    = require('path'),
@@ -9,7 +9,7 @@ var express = require('express'),
     
 // all environments
 app.set('port', process.env.TEST_PORT || 8080);
-app.use(express.favicon());
+app.use(favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
