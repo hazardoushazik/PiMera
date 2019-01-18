@@ -10,6 +10,7 @@ var express        = require('express'),
     io             = require('socket.io').listen(server),
     spawn          = require('child_process').spawn
     
+io.set('log level', 1);
     
 // all environments
 app.set('port', process.env.TEST_PORT || 8080);
@@ -30,4 +31,8 @@ app.get('/remote', function (req, res) {
 
 server.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
+});
+
+io.sockets.on('connection', function (socket) {
+    // WebSocket Connection
 });
