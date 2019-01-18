@@ -21,11 +21,11 @@ app.use(static(path.join(__dirname, 'public')));
 
 // routes
 app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/public/index.html')
+    res.sendFile(__dirname + '/public/index.html')
 });
 
 app.get('/remote', function (req, res) {
-    res.sendfile(__dirname + '/public/remote.html')
+    res.sendFile(__dirname + '/public/remote.html')
 });
 
 server.listen(app.get('port'), function () {
