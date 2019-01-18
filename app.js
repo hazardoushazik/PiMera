@@ -1,5 +1,5 @@
 var express = require('express'), 
-    favicon = require('serve-favicon')
+    favicon = require('favicon')
     app     = express(), 
     server  = require('http').createServer(app), 
     path    = require('path'),
