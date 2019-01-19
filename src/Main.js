@@ -39,7 +39,7 @@ class Main extends Component {
             <HashRouter>
                 <div>
                     <span><h1>PiMera</h1></span>
-                    <ul className = "menu">
+                    <ul>
                         {menu_items.LABELS.map(menu_items => (
                             <Menu to = {menu_items.LINKS}
                                label = {menu_items.LABELS} 
