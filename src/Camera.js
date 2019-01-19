@@ -36,7 +36,7 @@ class Camera extends Component {
 	render() {
 		return (
 			<div onLoad = "createImageLayer()">
-				<h2>OBD II DATA</h2>
+				<h2>Camera</h2>
 				<div id = "webcam">
 					<noscript><img src="./?action=stream" /></noscript>
 				</div>
