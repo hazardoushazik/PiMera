@@ -27,8 +27,8 @@ const MENU_LINKS = [
     "/destinations",
     "/media",
     "/camera",
-    "/cata",
-    "settings"
+    "/data",
+    "/settings"
 ];
 
 class Main extends Component {
