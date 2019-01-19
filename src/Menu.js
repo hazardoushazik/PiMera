@@ -5,7 +5,7 @@ import {
   HashRouter
 } from "react-router-dom";
 
-const Menu = ({ to }) => (
+const Menu = ({ to, label }) => (
     <li><NavLink to = {to}>{key}</NavLink></li>
 );
 
