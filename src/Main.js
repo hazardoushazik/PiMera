@@ -33,7 +33,7 @@ const menu_data = ({ LABELS, LINKS }) => (
     ]
 );
 
-const menu_items = menu_data.LABELS.map(menu_items => (
+const menu_items = menu_data.map(menu_items => (
     <li><NavLink to = {menu_data.LINKS}>{menu_data.LABELS}</NavLink></li>
 ));
 
