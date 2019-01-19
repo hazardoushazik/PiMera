@@ -13,7 +13,7 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
-const menu_items = ({ LABELS, LINKS }) => (
+const menu_data = ({ LABELS, LINKS }) => (
     LABELS = [
         "Home",
         "Destinations",
@@ -33,6 +33,10 @@ const menu_items = ({ LABELS, LINKS }) => (
     ]
 );
 
+const menu_items = menu_data.LABELS.map(menu_items => (
+    <li><NavLink to = {menu_data.LINKS}>{menu_data.LABELS}</NavLink></li>
+));
+
 class Main extends Component {
     render () {
         return (
@@ -40,11 +44,7 @@ class Main extends Component {
                 <div>
                     <span><h1>PiMera</h1></span>
                     <ul>
-                        {menu_items.LABELS.map(menu_items => (
-                            <Menu to = {menu_items.LINKS}
-                               label = {menu_items.LABELS} 
-                                 key = {menu_items.LABELS} />
-                        ))}
+                        {menu_items}
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
