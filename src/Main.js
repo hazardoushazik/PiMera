@@ -13,23 +13,6 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
-const MENU_ITEMS = [
-    "Home",
-    "Destinations",
-    "Media",
-    "Camera",
-    "Data",
-    "Settings"
-];
-
-const MENU_LINKS = [
-    "/",
-    "/destinations",
-    "/media",
-    "/camera",
-    "/data",
-    "/settings"
-];
 
 class Main extends Component {
     render () {
@@ -38,9 +21,11 @@ class Main extends Component {
                 <div>
                     <span><h1>PiMera</h1></span>
                     <ul className = "menu">
-                        {MENU_ITEMS.map(link => (
-                            <Menu to = {MENU_LINKS} label = {MENU_ITEMS} key = {MENU_ITEMS} />
-                        ))}
+                        {menu_items.map(menu_items => {
+                            const links = menu_items.LINKS;
+                            const labels = menu_items.LABELS;
+                            return <Menu to = {links} label = {lables} key = {labels} />
+                        })}
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
