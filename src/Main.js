@@ -40,11 +40,11 @@ class Main extends Component {
                 <div>
                     <span><h1>PiMera</h1></span>
                     <ul className = "menu">
-                        {menu_items.LABELS.map(menu_items => {
-                            const links = menu_items.LINKS;
-                            const labels = menu_items.LABELS;
-                            return <Menu to = {links} label = {labels} key = {labels} />
-                        })}
+                        {menu_items.LABELS.map(menu_items => (
+                            <Menu to = {menu_items.LINKS}
+                               label = {menu_items.LABELS} 
+                                 key = {menu_items.LABELS} />
+                        )}
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
