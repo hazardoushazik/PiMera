@@ -43,7 +43,7 @@ class Main extends Component {
                         {menu_items.map(menu_items => {
                             const links = menu_items.LINKS;
                             const labels = menu_items.LABELS;
-                            return <Menu to = {links} label = {lables} key = {labels} />
+                            return <Menu to = {links} label = {labels} key = {labels} />
                         })}
                     </ul>
                     <div className = "content">
