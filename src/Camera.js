@@ -6,7 +6,10 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					<noscript><img src="http://localhost:9000/?action=snapshot" /></noscript>
+					<noscript>
+						<img src ="http://localhost:9000/?action=snapshot" 
+							 alt = "This is a static image"/>
+					</noscript>
 				</div>
 			</div>
 		);
