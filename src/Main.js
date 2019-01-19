@@ -33,8 +33,8 @@ const menu_data = ({ LABELS, LINKS }) => (
     ]
 );
 
-const menu_items = menu_data.LABELS.map((menu_data) => (
-    <li><NavLink to = {menu_data.LINKS}>{menu_data.LABELS}</NavLink></li>
+const menu_items = this.props.menu_data.map((LABELS, LINKS) => (
+    <li><NavLink to = {LINKS}>{LABELS}</NavLink></li>
 ));
 
 class Main extends Component {
