@@ -13,12 +13,36 @@ import Data from "./Data";
 import Settings from "./Settings";
 
 const items = [
-    {label: "Home",         link: "/"},
-    {label: "Destinations", link: "/destinations"},
-    {label: "Media",        link: "/media"},
-    {label: "Camera",       link: "/camera"},
-    {label: "Data",         link: "/data"},
-    {label: "Settings",     link: "/settings"}
+    {
+        label: "Home",
+        component: Home,
+        link: "/"
+    },
+    {
+        label: "Destinations", 
+        component: Destinations, 
+        link: "/destinations"
+    },
+    {
+        label: "Media",
+        component: Media,
+        link: "/media"
+    },
+    {
+        label: "Camera",
+        component: Camera,
+        link: "/camera"
+    },
+    {
+        label: "Data", 
+        component: Data, 
+        link: "/data"
+    },
+    {
+        label: "Settings",
+        component: Settings,
+        link: "/settings"
+    }
 ];
 
 
@@ -34,7 +58,7 @@ function MainMenu (props) {
 
 function Content (props) {
     const content = props.items.map((item) =>
-        <Route exact path = {item.link} component = { item.label }/>
+        <Route exact path = {item.link} component = { item.component }/>
     );
 
     return (
