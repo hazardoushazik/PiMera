@@ -45,7 +45,6 @@ const items = [
     }
 ];
 
-
 function MainMenu (props) {
     const menu = props.items.map((item) =>
         <li><NavLink to = {item.link}>{item.label}</NavLink></li>
