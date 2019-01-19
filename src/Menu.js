@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 const Menu = ({ to, label }) => (
-    <li><NavLink to = {to}>{label}</NavLink></li>
+    <li><NavLink to = {$to}>{$label}</NavLink></li>
 );
 
 export default Menu;
