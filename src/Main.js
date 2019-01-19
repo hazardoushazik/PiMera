@@ -23,13 +23,12 @@ const menuItems = [
 
 
 function MainMenu (props) {
-    const menu = (
-        <ul>
-            {props.menuItems.map((menuItem) =>
-                <li><NavLink to = {menuItem.link}>{menuItem.label}</NavLink></li>
-            )}
-        </ul>
-    )
+    const menu = props.menuItems.map((menuItem) =>
+        <li><NavLink to = {menuItem.link}>{menuItem.label}</NavLink></li>
+    );
+    return (
+        <ul>{menu}</ul>
+    );
 }
 
 class Main extends Component {
