@@ -47,7 +47,7 @@ const items = [
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <li><NavLink to = {item.link}>{item.label}</NavLink></li>
+        <li><NavLink key = {item.label} to = {item.link}>{item.label}</NavLink></li>
     );
 
     return (
@@ -57,7 +57,7 @@ function MainMenu (props) {
 
 function Content (props) {
     const content = props.items.map((item) =>
-        <Route exact path = {item.link} component = { item.component }/>
+        <Route key = {item.label} exact path = {item.link} component = { item.component }/>
     );
 
     return (
