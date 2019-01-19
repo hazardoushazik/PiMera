@@ -13,29 +13,25 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
-const menu_data = ({ LABELS, LINKS }) => (
-    LABELS = [
-        "Home",
-        "Destinations",
-        "Media",
-        "Camera",
-        "Data",
-        "Settings"
-    ],
+const menuItems = [
+    {label: "Home", link: "/"},
+    {label: "Destinations", link: "/destinations"},
+    {label: "Media", link: "/media"},
+    {label: "Camera", link: "/camera"},
+    {label: "Data", link: "/data"},
+    {label: "Settings", link: "/settings"}
+];
 
-    LINKS = [
-        "/",
-        "/destinations",
-        "/media",
-        "/camera",
-        "/data",
-        "/settings"
-    ]
-);
 
-const menu_items = this.props.menu_data.map((LABELS, LINKS) => (
-    <li><NavLink to = {LINKS}>{LABELS}</NavLink></li>
-));
+function MainMenu (props) {
+    const menu = (
+        <ul>
+            {props.menuItems.map((menuItem) =>
+                <li><NavLink to = {menuItem.link}>{menuItem.label}</NavLink></li>
+            )}
+        </ul>
+    )
+}
 
 class Main extends Component {
     render () {
@@ -43,9 +39,7 @@ class Main extends Component {
             <HashRouter>
                 <div>
                     <span><h1>PiMera</h1></span>
-                    <ul>
-                        {menu_items}
-                    </ul>
+                    <MainMenu menuItems = {menuItems} />
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
                         <Route path = "/destinations" component = { Destinations }/>
