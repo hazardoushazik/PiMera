@@ -34,7 +34,7 @@ function MainMenu (props) {
 
 function Content (props) {
     const content = props.items.map((item) =>
-        <Route exact path = {item.link} component = { '${item.label}' }/>
+        <Route exact path = {item.link} component = { item.label }/>
     );
 
     return (
