@@ -6,24 +6,36 @@ import {
 } from "react-router-dom";
 
 import Home from "./Home";
-import Stuff from "./Stuff";
-import Contact from "./Contact";
+import Destinations from "./Destinations";
+import Media from "./Media";
+import Camera from "./Camera";
+import Data from "./Data";
+import Settings from "./Settings";
 
 class Main extends Component {
     render () {
         return (
-            <div>
-                <span><h1>Simple SPA</h1></span>
-                <ul className = "home">
-                    <li><a href = "/">Home</a></li>
-                    <li><a href = "/destinations">Destinations</a></li>
-                    <li><a href = "/media">Media</a></li>
-                    <li><a href = "/camera">Camera</a></li>
-                    <li><a href = "/data">OBD II Data</a></li>
-                    <li><a href = "/settings">Settings</a></li>
-                </ul>
-                <div className = "content"></div>
-            </div>
+            <HashRouter>
+                <div>
+                    <span><h1>Simple SPA</h1></span>
+                    <ul className = "home">
+                        <li><NavLink to = "/">Home</NavLink></li>
+                        <li><NavLink to = "/destinations">Destinations</NavLink></li>
+                        <li><NavLink to = "/media">Media</NavLink></li>
+                        <li><NavLink to = "/camera">Camera</NavLink></li>
+                        <li><NavLink to = "/data">Vehicle Data</NavLink></li>
+                        <li><NavLink to = "/settings">Settings</NavLink></li>
+                    </ul>
+                    <div className = "content">
+                        <Route exact path = "/" component = { Home }/>
+                        <Route path = "/destinations" component = { Destinations }/>
+                        <Route path = "/media" component = { Media }/>
+                        <Route path = "/camera" component = { Camera }/>
+                        <Route path = "/data" component = { Data }/>
+                        <Route path = "/settings" component = { Settings }/>
+                    </div>
+                </div>
+            </HashRouter>
         );
     }
 }
