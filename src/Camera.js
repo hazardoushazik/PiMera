@@ -35,7 +35,7 @@ function imageOnclick() { // Clicking on the image will pause the stream
 class Camera extends Component {
 	render() {
 		return (
-			<div onload = "createImageLayer()">
+			<div onLoad = "createImageLayer()">
 				<h2>OBD II DATA</h2>
 				<div id = "webcam">
 					<noscript><img src="./?action=stream" /></noscript>
