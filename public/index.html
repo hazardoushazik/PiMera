@@ -18,12 +18,5 @@
         <div id="root"></div>
     </body>
     <footer>
-        <script src="/socket.io/socket.io.js"></script> <!-- include socket.io client side script -->
-        <script>
-            var socket = io.connect('http://raspberrypi:8080'); //load socket.io-client and connect to the host that serves the page
-            socket.on('connect', function (data) {
-                socket.emit('index');
-            });
-        </script>
     </footer>
 </html>
