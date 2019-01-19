@@ -5,6 +5,7 @@ import {
   HashRouter
 } from "react-router-dom";
 
+import Menu from "./Menu";
 import Home from "./Home";
 import Destinations from "./Destinations";
 import Media from "./Media";
@@ -12,19 +13,34 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
+const MENU_ITEMS = [
+    "Home",
+    "Destinations",
+    "Media",
+    "Camera",
+    "Data",
+    "Settings"
+];
+
+const MENU_LINKS = [
+    "/",
+    "/destinations",
+    "/media",
+    "/camera",
+    "/cata",
+    "settings"
+];
+
 class Main extends Component {
     render () {
         return (
             <HashRouter>
                 <div>
                     <span><h1>PiMera</h1></span>
-                    <ul className = "home">
-                        <li><NavLink to = "/">Home</NavLink></li>
-                        <li><NavLink to = "/destinations">Destinations</NavLink></li>
-                        <li><NavLink to = "/media">Media</NavLink></li>
-                        <li><NavLink to = "/camera">Camera</NavLink></li>
-                        <li><NavLink to = "/data">Vehicle Data</NavLink></li>
-                        <li><NavLink to = "/settings">Settings</NavLink></li>
+                    <ul className = "menu">
+                        {MENU_ITEMS.map(link => (
+                            <Menu to = {MENU_LINKS} key = {MENU_ITEMS} />
+                        ))};
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
