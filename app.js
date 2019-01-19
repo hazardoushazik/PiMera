@@ -13,7 +13,7 @@ var express        = require('express'),
 io.set('log level', 1);
     
 // all environments
-app.set('port', process.env.TEST_PORT || 8080);
+app.set('port', process.env.TEST_PORT || 3001);
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser());
