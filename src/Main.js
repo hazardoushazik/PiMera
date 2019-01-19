@@ -44,7 +44,7 @@ class Main extends Component {
                             <Menu to = {menu_items.LINKS}
                                label = {menu_items.LABELS} 
                                  key = {menu_items.LABELS} />
-                        )}
+                        ))}
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
