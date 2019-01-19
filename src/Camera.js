@@ -8,7 +8,7 @@ class Camera extends Component {
 				<div>
 					<noscript>
 						<img src ="http://localhost:9000/?action=snapshot" 
-							 alt = "This is a static image"/>
+							 alt = "This is a static stream from my pi camera"/>
 					</noscript>
 				</div>
 			</div>
