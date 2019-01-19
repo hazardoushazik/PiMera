@@ -5,7 +5,6 @@ import {
   HashRouter
 } from "react-router-dom";
 
-import Menu from "./Menu";
 import Home from "./Home";
 import Destinations from "./Destinations";
 import Media from "./Media";
