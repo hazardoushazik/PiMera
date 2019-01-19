@@ -50,14 +50,6 @@ class Main extends Component {
                     <span><h1>PiMera</h1></span>
                     <MainMenu items = {items} />
                     <Content  items = {items} />
-                    <div className = "content">
-                        <Route exact path = "/"       component = { Home }/>
-                        <Route path = "/destinations" component = { Destinations }/>
-                        <Route path = "/media"        component = { Media }/>
-                        <Route path = "/camera"       component = { Camera }/>
-                        <Route path = "/data"         component = { Data }/>
-                        <Route path = "/settings"     component = { Settings }/>
-                    </div>
                 </div>
             </HashRouter>
         );
