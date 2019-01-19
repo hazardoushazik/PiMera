@@ -13,6 +13,25 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
+const menu_items = ({ LABELS, LINKS }) => (
+    LABELS = [
+        "Home",
+        "Destinations",
+        "Media",
+        "Camera",
+        "Data",
+        "Settings"
+    ],
+
+    LINKS = [
+        "/",
+        "/destinations",
+        "/media",
+        "/camera",
+        "/data",
+        "/settings"
+    ]
+);
 
 class Main extends Component {
     render () {
