@@ -10,7 +10,7 @@ class Main extends Component {
                     <li><a href = "/destinations">Destinations</a></li>
                     <li><a href = "/media">Media</a></li>
                     <li><a href = "/camera">Camera</a></li>
-                    <li><a href = "/date">OBD II Data</a></li>
+                    <li><a href = "/data">OBD II Data</a></li>
                     <li><a href = "/settings">Settings</a></li>
                 </ul>
                 <div className = "content"></div>
