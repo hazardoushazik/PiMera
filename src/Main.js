@@ -40,7 +40,7 @@ class Main extends Component {
                     <ul className = "menu">
                         {MENU_ITEMS.map(link => (
                             <Menu to = {MENU_LINKS} label = {MENU_ITEMS} key = {MENU_ITEMS} />
-                        ))};
+                        ))}
                     </ul>
                     <div className = "content">
                         <Route exact path = "/" component = { Home }/>
