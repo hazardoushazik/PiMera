@@ -39,7 +39,7 @@ class Main extends Component {
                     <span><h1>PiMera</h1></span>
                     <ul className = "menu">
                         {MENU_ITEMS.map(link => (
-                            <Menu to = {MENU_LINKS} key = {MENU_ITEMS} />
+                            <Menu to = {MENU_LINKS} label = {MENU_ITEMS} key = {MENU_ITEMS} />
                         ))};
                     </ul>
                     <div className = "content">
