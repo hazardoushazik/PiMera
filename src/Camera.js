@@ -8,13 +8,12 @@ class Camera extends Component {
 			imageSrc = "http://raspberrypi:9000/?action=snapshot";
 			imageHash = new Date().getTime();
 		}
-		setInterval(tick,50);
 		return (
 			<div>
 				<h2>Camera</h2>
 				<div>
 					<img 	src = {`${imageSrc}#${imageHash}`}
-  						 	alt = "This is a static stream from my pi camera"/>
+  						 	alt = "This is a static stream from my pi camera"/>{setInterval(tick,50)}
 				</div>
 			</div>
 		)
