@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
-function tick() {
-	const imageSrc = "http://raspberrypi:9000/?action=snapshot#";
-	const imageHash = new Date().getTime();	
-}
+const imageHash, imageSrc;
 
 class Camera extends Component {
 	render() {
@@ -12,10 +9,13 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					{/* <noscript> */}
+					{function tick() {
+						imageSrc = "http://raspberrypi:9000/?action=snapshot#";
+						imageHash = new Date().getTime();	
+					}}
 						<img src = {`${imageSrc}#${imageHash}`}
 							 alt = "This is a static stream from my pi camera"/>
-					{/* </noscript> */}
+					{setInterval(tick,16)}
 				</div>
 			</div>
 		);
