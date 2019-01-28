@@ -5,11 +5,11 @@ class Camera extends Component {
 		return (
 			<div>
 				<h2>Camera</h2>
-				<div id="webcam">
-					<noscript>
+				<div>
+					{/* <noscript> */}
 						<img src ="http://raspberrypi:9000/?action=snapshot"
 							 alt = "This is a stream from my pi camera"/>
-					</noscript>
+					{/* </noscript> */}
 				</div>
 			</div>
 		);
