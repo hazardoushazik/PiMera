@@ -13,11 +13,12 @@ class Camera extends Component {
 				<h2>Camera</h2>
 				<div>
 					<img 	src = {`${imageSrc}#${imageHash}`}
-  						 	alt = "This is a static stream from my pi camera"/>{setInterval(tick,50)}
+  						 	alt = "This is a static stream from my pi camera"/>
 				</div>
 			</div>
 		)
 	}
 }
 
+setInterval(tick,50);
 export default Camera;
