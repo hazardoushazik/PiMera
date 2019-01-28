@@ -12,6 +12,8 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
+const $ = window.$;
+
 const items = [
     {
         label: "Home",

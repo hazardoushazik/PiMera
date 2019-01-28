@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import jQuery from 'jquery'
 
 var express = require('express');
 var app = express();
