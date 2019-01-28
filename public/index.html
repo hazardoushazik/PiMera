@@ -9,7 +9,28 @@
             homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
             -->
         <link rel="manifest" href="manifest.json" />
+        
+        <!-- socket.io -->
+        <!--<script src="js/socket.io.js"></script>-->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap JavaScript ... -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- ... and CSS -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+        var socket = io();
+        socket.on('liveStream', function(url) {
+          $('#stream').attr('src', url);
+          $('.start').hide();
+        });
+       
+        function startStream() {
+          socket.emit('start-stream');
+          $('.start').hide();
+        }
+        </script>
         <title>React Router Example (SPA)</title>
     </head>
 
