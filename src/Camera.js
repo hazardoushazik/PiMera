@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 
-const imageSrc;
-const imageHash;
+function tick() {
+const imageSrc = "http://raspberrypi:9000/?action=snapshot#";
+const imageHash = new Date().getTime();
+	
+}
 
+setInterval(tick, 1000);
 class Camera extends Component {
 	render() {
-		setInterval(tick, 1000);
+		const imageSrc = "http://raspberrypi:9000/?action=snapshot";
+		const imageHash = new Date().getTime();
+		function tick() {
+			imageSrc = "http://raspberrypi:9000/?action=snapshot";
+			imageHash = new Date().getTime();
+		}
+		setInterval(tick,50);
 		return (
 			<div>
 				<h2>Camera</h2>
 				<div>
-					{function tick() {
-						imageSrc = "http://raspberrypi:9000/?action=snapshot#";
-						imageHash = new Date().getTime();	
-					}}
+					{/* <noscript> */}
 						<img src = {`${imageSrc}#${imageHash}`}
 							 alt = "This is a static stream from my pi camera"/>
-					{setInterval(tick,16)}
+					{/* </noscript> */}
 				</div>
 			</div>
-		);
+		)
 	}
 }
 
