@@ -6,10 +6,10 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					<noscript>
+					{/* <noscript> */}
 						<img src ="http://raspberrypi:9000/?action=snapshot" 
 							 alt = "This is a static stream from my pi camera"/>
-					</noscript>
+					{/* </noscript> */}
 				</div>
 			</div>
 		);
