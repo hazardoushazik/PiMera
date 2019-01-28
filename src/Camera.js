@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Camera extends Component {
 	render() {
 		return (
-			<div onLoad={createImageLayer()}>
+			<div>
 				<h2>Camera</h2>
 				<div id="webcam">
 					<noscript>
