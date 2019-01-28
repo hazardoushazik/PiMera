@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Main from "./Main";
 // Take still image and save to disk
 var socket = io();
 socket.on('liveStream', function(url) {
