@@ -16,7 +16,9 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					<Stream src = {streamSrc} />
+					setInterval(() => {<Stream src = {streamSrc} />
+						
+					}, 20);
 				</div>
 			</div>
 		)
