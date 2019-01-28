@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "express": "^4.16.4",
+    "pi-camera": "^1.2.1",
+    "pi-camera-connect": "^0.2.0",
+    "raspivid-stream": "^0.2.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
