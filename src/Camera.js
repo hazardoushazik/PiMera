@@ -13,10 +13,8 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					{/* <noscript> */}
-						<img src = {`${imageSrc}#${imageHash}`}
-							 alt = "This is a static stream from my pi camera"/>
-					{/* </noscript> */}
+					<img 	src = {`${imageSrc}#${imageHash}`}
+  						 	alt = "This is a static stream from my pi camera"/>
 				</div>
 			</div>
 		)
