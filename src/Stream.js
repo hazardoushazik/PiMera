@@ -13,7 +13,7 @@ class Stream extends Component {
 	componentDidMount() {
 		this.interval = setInterval(
 			() => this.setState({
-				streanImage: `${STREAM_SRC}?${new Date().getTime()}`,
+				streamImage: `${STREAM_SRC}?${new Date().getTime()}`,
 			}),
 			10
 		);
