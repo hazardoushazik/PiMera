@@ -19,18 +19,6 @@
         <!-- ... and CSS -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="screen">
         <script src="/socket.io/socket.io.js"></script>
-        <script>
-        var socket = io();
-        socket.on('liveStream', function(url) {
-          $('#stream').attr('src', url);
-          $('.start').hide();
-        });
-       
-        function startStream() {
-          socket.emit('start-stream');
-          $('.start').hide();
-        }
-        </script>
         <title>React Router Example (SPA)</title>
     </head>
 
