@@ -7,11 +7,11 @@ const streamCamera = new StreamCamera({
 	codec: Codec.MJPEG
 });
 
-await streamCamera.startCapture();
+streamCamera.startCapture().then();
 streamCamera.takeImage().then(image => {
 	fs.writeFileSync("stream-image.jpg", image);
 });
-await streamCamera.stopCapture();
+streamCamera.stopCapture().then();
 
 class Camera extends Component {
 	render() {
