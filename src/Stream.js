@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const STREAM_SRC = "http://192.168.2.36:9000/?action=stream";
+const STREAM_SRC = "http://raspberrypi:9000/?action=stream";
 
 class Stream extends Component {
 	constructor(props) {
