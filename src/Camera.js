@@ -23,6 +23,47 @@ class Camera extends Component {
 			webcam.insertBefore(img, webcam.firstChild);
 			document.getElementById('fN').firstChild.nodeValue = fN;
 		}
+		function runningAvgs (delta) {
+			// delta is the measured frame period
+			var len;
+			if (fcnt < fN) {
+				fcnt++;
+				// we need to populate the sample array
+				msa.push(delta);
+				// calculate average period so far
+				msAvg += (delta - msAvg) / fcnt;
+				
+			} else {
+				/*
+					running average (fN samples) according to the formula:
+					rAvg = rAvg - value_fN_samples_back / fN + newest_value / fN
+				*/
+				msAvg += (delta - msa[0])/fN;
+				// drop oldest ms value, msa[0]
+				msa = msa.slice(1);
+				// append newest value, delta
+				msa.push(delta);
+			}
+			// calculate average fps
+			fpsAvg = 1000 / msAvg;
+			/*
+				once every fN frames, check if we need to adjust the averaging window
+				since faster rates seem to need more samples to reach a stable(er) readout
+			*/
+			if (++fNi == fN) {
+				fNi = 0;
+				// new window size
+				fN = parseInt(fpsAvg * wsize);
+				len = fcnt - fN;
+				// if our sample array, msa, has extra samples, then trim it to the new size
+				if (len > 0) {
+					// adjust averaging window (nr of samples)
+					msa = msa.splice(len);
+					// avoid populating the sample array again
+					fcnt = fN;
+				}
+			}
+		}	
 		// Two layers are always present (except at the very beginning), to avoid flicker
 		function imageOnload() {
 			this.style.zIndex = imageNr; // Image finished, bring to front!
