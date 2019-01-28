@@ -11,7 +11,6 @@ function Stream(props) {
 
 class Camera extends Component {
 	render() {
-		setInterval(tick, 10);
 		return (
 			<div>
 				<h2>Camera</h2>
