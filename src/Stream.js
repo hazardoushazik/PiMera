@@ -30,4 +30,4 @@ class Stream extends Component {
 		)
 	}
 }
-export default Camera;
+export default Stream;
