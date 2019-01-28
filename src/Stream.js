@@ -14,8 +14,8 @@ class Stream extends Component {
 	componentDidMount() {
 		this.interval = setInterval(
 			() => this.setState({
-                currentImage: nextImage,
 				nextImage: `${STREAM_SRC}?${new Date().getTime()}`,
+                currentImage: nextImage,
 			}),
 			20
 		);
