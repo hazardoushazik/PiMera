@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const STREAM_SRC = "http://raspberrypi:9000/?action=stream";
+const STREAM_SRC = ":9000/?action=stream";
 
 class Stream extends Component {
 	constructor(props) {
@@ -26,7 +26,7 @@ class Stream extends Component {
 	render() {
 		return (
             <img 	src = {this.state.streamImage}
-					alt = "This is a static stream from my pi camera"/>
+					alt = "This is a stream from my pi camera"/>
 		)
 	}
 }
