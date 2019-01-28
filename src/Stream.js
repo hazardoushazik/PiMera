@@ -26,6 +26,7 @@ class Stream extends Component {
 	render() {
 		return (
             <img 	src = {this.state.streamImage}
+                    style = "transform: rotate(180deg)"
 					alt = "This is a stream from my pi camera"/>
 		)
 	}
