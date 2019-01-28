@@ -6,14 +6,16 @@ class Stream extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			streamImage: null
+			currentImage: null,
+			nextImage: null
 		};
 	}
 
 	componentDidMount() {
 		this.interval = setInterval(
 			() => this.setState({
-				streamImage: `${STREAM_SRC}?${new Date().getTime()}`,
+                currentImage: nextImage,
+				nextImage: `${STREAM_SRC}?${new Date().getTime()}`,
 			}),
 			20
 		);
@@ -25,7 +27,7 @@ class Stream extends Component {
 	
 	render() {
 		return (
-            <img 	src = {this.state.streamImage}
+            <img 	src = {this.state.currentImage}
 					alt = "This is a static stream from my pi camera"/>
 		)
 	}
