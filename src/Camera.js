@@ -1,92 +1,36 @@
 import React, { Component } from "react";
+import { StreamCamera, Codec } from "pi-camera-connect";
+import * as fs from "fs";
 
-const $ = window.$;
+// Take still image and save to disk
+const runApp = async () => {
+    
+    const streamCamera = new StreamCamera({
+        codec: Codec.MJPEG
+    });
 
-var express = require('express');
-var app = express();
-var http = require('http')
-var io = require('socket.io')
-var fs = require('fs');
-var path = require('path');
+    await streamCamera.startCapture();
 
-var spawn = require('child_process').spawn;
-var proc;
+    const image = await streamCamera.takeImage();
 
-app.use('/', express.static(path.join(__dirname, 'stream')));
+    // Process image...
 
-app.get('/', function(req, res) {
-	res.sendFile(__dirname);
-});
+    await streamCamera.stopCapture();
+};
 
-var sockets = {};
+runApp();
 
-io.on('connection', function(socket) {
-	sockets[socket.id] = socket;
-	console.log("Total clients connected : ", Object.keys(sockets).length);
 
-	socket.on('disconnect', function() {
-		delete sockets[socket.id];
-
-		// no more sockets, kill the stream
-		if (Object.keys(sockets).length == 0) {
-			app.set('watchingFile', false);
-			if (proc) proc.kill();
-				fs.unwatchFile('./stream/image_stream.jpg');
-		}
-	});
-
-	socket.on('start-stream', function() {
-			startStreaming(io);
-	});
-});
-
-http.listen(3001, function() {
-	console.log('listening on *:3000');
-});
-
-function stopStreaming() {
-	if (Object.keys(sockets).length == 0) {
-		app.set('watchingFile', false);
-		if (proc) proc.kill();
-		fs.unwatchFile('./stream/image_stream.jpg');
-	}
-}
-
-function startStreaming(io) {
-	if (app.get('watchingFile')) {
-		io.sockets.emit('liveStream', 'image_stream.jpg?_t=' + (Math.random() * 100000));
-		return;
-	}
-
-	var args = ["-w", "640", "-h", "480", "-o", "./stream/image_stream.jpg", "-t", "999999999", "-tl", "100"];
-	proc = spawn('raspistill', args);
-
-	console.log('Watching for changes...');
-
-	app.set('watchingFile', true);
-
-	fs.watchFile('./stream/image_stream.jpg', function(current, previous) {
-		io.sockets.emit('pi-mera', 'image_stream.jpg?_t=' + (Math.random() * 100000));
-	})
-}
-
-class Camera extends Component {	
+class Camera extends Component {
 	render() {
-		var socket = io();
-		socket.on('liveStream', function(url) {
-			$('#stream').attr('src', url);
-			$('.start').hide();
-		});
-		
-		function startStream() {
-			socket.emit('start-stream');
-			$('.start').hide();
-		}
 		return (
 			<div>
 				<h2>Camera</h2>
-				<div onload="startStream()">
-					<img src="" id="stream"/>
+				<div>
+					<noscript>
+						<img src ="http://localhost:9000/?action=snapshot" 
+							 alt = "This is a static stream from my pi camera"/>
+					</noscript>
 				</div>
 			</div>
 		);
