@@ -5,9 +5,9 @@ function tick() {
 	const imageHash = new Date().getTime();	
 }
 
-setInterval(tick, 1000);
 class Camera extends Component {
 	render() {
+		setInterval(tick, 1000);
 		return (
 			<div>
 				<h2>Camera</h2>
