@@ -12,12 +12,6 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 var proc;
 
-app.use('/', express.static(path.join(__dirname, 'stream')));
-
-app.get('/', function(req, res) {
-	res.sendFile(__dirname);
-});
-
 var sockets = {};
 
 io.on('connection', function(socket) {
