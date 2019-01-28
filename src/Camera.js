@@ -15,7 +15,7 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
-					<img 	src = {`${imageSrc}#${imageHash}`}
+					<img 	src = {`"http://raspberrypi:9000/?action=snapshot"?${new Date().getTime()}`}
   						 	alt = "This is a static stream from my pi camera"/>
 				</div>
 			</div>
