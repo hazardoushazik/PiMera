@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-const STREAM_SRC = "http://raspberrypi:9000/?action=snapshot";
-const STREAM_REFRESH_RATE = 100;
+const STREAM_SRC = "http://raspberrypi:9000/?action=stream";
+const STREAM_REFRESH_RATE = 10;
 
 class Stream extends Component {
 	constructor(props) {
