@@ -7,15 +7,15 @@ class Stream extends Component {
 		super(props);
 		this.state = {
 			currentImage: null,
-			nextImage: null
+			nextImage: `${STREAM_SRC}?${new Date().getTime()}`
 		};
 	}
 
 	componentDidMount() {
 		this.interval = setInterval(
 			() => this.setState({
-				nextImage: `${STREAM_SRC}?${new Date().getTime()}`,
                 currentImage: nextImage,
+				nextImage: `${STREAM_SRC}?${new Date().getTime()}`,
 			}),
 			20
 		);
