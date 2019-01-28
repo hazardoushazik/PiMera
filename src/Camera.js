@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import jQuery from 'jquery'
+
+const $ = window.$;
 
 var express = require('express');
 var app = express();
