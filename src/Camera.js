@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import spawn from "child_process";
 import { StillCamera, Codec } from "pi-camera-connect";
 import * as fs from "fs";
 // Take still image and save to disk
