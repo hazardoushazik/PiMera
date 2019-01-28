@@ -15,7 +15,7 @@ class Stream extends Component {
 			() => this.setState({
 				streamImage: `${STREAM_SRC}?${new Date().getTime()}`,
 			}),
-			40
+			20
 		);
 	}
 	
