@@ -12,6 +12,7 @@ function Stream(props) {
 
 class Camera extends Component {
 	constructor(props) {
+		super(props);
 		this.state = {
 			streanImage: null
 		};
