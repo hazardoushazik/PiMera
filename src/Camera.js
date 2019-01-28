@@ -64,20 +64,27 @@ function startStreaming(io) {
 	app.set('watchingFile', true);
 
 	fs.watchFile('./stream/image_stream.jpg', function(current, previous) {
-		io.sockets.emit('liveStream', 'image_stream.jpg?_t=' + (Math.random() * 100000));
+		io.sockets.emit('pi-mera', 'image_stream.jpg?_t=' + (Math.random() * 100000));
 	})
 }
 
-class Camera extends Component {
+class Camera extends Component {	
 	render() {
+		var socket = io();
+		socket.on('liveStream', function(url) {
+			$('#stream').attr('src', url);
+			$('.start').hide();
+		});
+		
+		function startStream() {
+			socket.emit('start-stream');
+			$('.start').hide();
+		}
 		return (
 			<div>
 				<h2>Camera</h2>
-				<div>
-					<noscript>
-						<img src ="http://192.168.2.36:9000/?action=snapshot" 
-							 alt = "This is a static stream from my pi camera"/>
-					</noscript>
+				<div onload="startStream()">
+					<img src="" id="stream"/>
 				</div>
 			</div>
 		);
