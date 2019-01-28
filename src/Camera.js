@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
-const imageSrc = "http://raspberrypi:9000/?action=snapshot#";
-const imageHash = new Date().getTime();
+function tick() {
+	const imageSrc = "http://raspberrypi:9000/?action=snapshot#";
+	const imageHash = new Date().getTime();	
+}
 
+setInterval(tick, 1000);
 class Camera extends Component {
 	render() {
 		return (
