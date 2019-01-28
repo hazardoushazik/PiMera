@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const streamSrc = "http://raspberrypi:9000/?action=snapshot";
+const STREAM_SRC = "http://raspberrypi:9000/?action=snapshot";
 
 function Stream(props) {
 	const hash = new Date().toLocaleTimeString();
@@ -11,14 +11,32 @@ function Stream(props) {
 }
 
 class Camera extends Component {
+	constructor(props) {
+		this.state = {
+			streanImage: null
+		};
+	}
+
+	componentDidMount() {
+		this.interval = setInterval(
+			() => this.setState({
+				streanImage: `${STREAM_SRC}?${new Date().getTime()}`,
+			}),
+			100
+		);
+	}
+	
+	componentWillUnmount(nextProps) {
+		clearInterval(this.interval);
+	}
+	
 	render() {
 		return (
 			<div>
 				<h2>Camera</h2>
 				<div>
-					setInterval(() => {<Stream src = {streamSrc} />
-						
-					}, 20);
+					<img 	src = {this.state.streanImage}
+							alt = "This is a static stream from my pi camera"/>
 				</div>
 			</div>
 		)
