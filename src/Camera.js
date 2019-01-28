@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
+var imageSrc = "http://raspberrypi:9000/?action=snapshot";
+var imageHash = new Date().getTime();
+
+function tick() {
+	imageSrc = "http://raspberrypi:9000/?action=snapshot";
+	imageHash = new Date().getTime();
+}
+
 class Camera extends Component {
 	render() {
-		var imageSrc = "http://raspberrypi:9000/?action=snapshot";
-		var imageHash = new Date().getTime();
-		function tick() {
-			imageSrc = "http://raspberrypi:9000/?action=snapshot";
-			imageHash = new Date().getTime();
-		}
 		return (
 			<div>
 				<h2>Camera</h2>
