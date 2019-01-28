@@ -10,6 +10,7 @@ function tick() {
 
 class Camera extends Component {
 	render() {
+		setInterval(tick, 10);
 		return (
 			<div>
 				<h2>Camera</h2>
@@ -21,6 +22,4 @@ class Camera extends Component {
 		)
 	}
 }
-
-setInterval(tick,50);
 export default Camera;
