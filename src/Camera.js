@@ -14,6 +14,7 @@ const runApp = async () => {
     const image = await streamCamera.takeImage();
 
     // Process image...
+    fs.writeFileSync("stream-image.jpg", image);
 
     await streamCamera.stopCapture();
 };
