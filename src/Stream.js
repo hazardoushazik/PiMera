@@ -13,18 +13,18 @@ class Stream extends Component {
             img.crossOrigin = "Anonymous";
             img.onload = function () {
                 var canvas = document.createElement("canvas");
-                canvas.width =this.width;
-                canvas.height =this.height;
+                canvas.width = this.width;
+                canvas.height = this.height;
         
                 var ctx = canvas.getContext("2d");
                 ctx.drawImage(this, 0, 0);
         
                 var dataURL = canvas.toDataURL("image/png");
-                component.setState({liveImage: STREAM_SRC});
+                component.setState({liveImage: dataURL});
             };
         
-                img.src = `${this.props.image}?${new Date().getTime()}`;
-                this.setState({ loadingImage: img });
+            img.src = `${STREAM_SRC}?${new Date().getTime()}`;
+            this.setState({ loadingImage: img });
         }
       
         this.state = {
@@ -44,7 +44,7 @@ class Stream extends Component {
 	
 	render() {
 		return (
-            <img 	src = {this.state.streamImage}
+            <img 	src = {this.state.liveImage}
 					alt = "This is a static stream from my pi camera"/>
 		)
 	}
