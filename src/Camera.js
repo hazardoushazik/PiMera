@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-var image_url = "http://raspberrypi:9000/?action=snapshot";
+const image_url = "http://raspberrypi:9000/?action=snapshot";
 
 function tick() {
-	image_url = "http://raspberrypi:9000/?action=snapshot";
+	const image_url = "http://raspberrypi:9000/?action=snapshot";
 }
 
 function Image() {
