@@ -15,7 +15,7 @@ class Camera extends Component {
 			() => this.setState({
 				streanImage: `${STREAM_SRC}?${new Date().getTime()}`,
 			}),
-			100
+			10
 		);
 	}
 	
