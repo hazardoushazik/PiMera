@@ -31,7 +31,7 @@ class Camera extends Component {
 			if (!paused) createImageLayer();
 		}
 		return (
-			<div onLoad="createImageLayer();">
+			<div onLoad={createImageLayer()}>
 				<h2>Camera</h2>
 				<div id="webcam">
 					<noscript>
