@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-var imageSrc = "http://raspberrypi:9000/?action=snapshot";
-var imageHash = new Date().getTime();
+const streamSrc = "http://raspberrypi:9000/?action=snapshot";
 
-function tick() {
-	imageSrc = "http://raspberrypi:9000/?action=snapshot";
-	imageHash = new Date().getTime();
+function Stream(props) {
+	return (
+		<img 	src = {`${props.src}?${new Date().getTime()}`}
+				alt = "This is a static stream from my pi camera"/>
+	)
 }
 
 class Camera extends Component {
@@ -15,6 +16,7 @@ class Camera extends Component {
 			<div>
 				<h2>Camera</h2>
 				<div>
+					<Stream src = {streamSrc} />
 					<img 	src = {`http://raspberrypi:9000/?action=snapshot?${new Date().getTime()}`}
   						 	alt = "This is a static stream from my pi camera"/>
 				</div>
