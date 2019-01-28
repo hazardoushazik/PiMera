@@ -3,20 +3,13 @@ import React, { Component } from "react";
 const $ = window.$;
 
 var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var http = require('http')
+var io = require('socket.io')
 var fs = require('fs');
 var path = require('path');
 
 var spawn = require('child_process').spawn;
 var proc;
-
-app.use('/', express.static(path.join(__dirname, 'stream')));
-
-app.get('/', function(req, res) {
-	res.sendFile(__dirname);
-});
 
 var sockets = {};
 
