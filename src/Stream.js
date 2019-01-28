@@ -26,6 +26,7 @@ class Stream extends Component {
 	render() {
 		return (
             <img 	src = {this.state.streamImage}
+                    class = "xform x-rotated-180"
 					alt = "This is a stream from my pi camera"/>
 		)
 	}
