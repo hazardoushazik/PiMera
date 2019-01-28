@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
-const imageHash, imageSrc;
+const imageSrc;
+const imageHash;
 
 class Camera extends Component {
 	render() {
