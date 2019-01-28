@@ -38,7 +38,7 @@ class Stream extends Component {
         this.interval = setInterval(this.loadImage, STREAM_REFRESH_RATE);
     }
 	
-	componentWillUnmount(nextProps) {
+	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
 	
