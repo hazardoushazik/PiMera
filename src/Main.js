@@ -70,7 +70,7 @@ function Content (props) {
     );
 
     return (
-        <div className = "content card">{content}</div>
+        <div className = "content mt-3">{content}</div>
     );
 }
 

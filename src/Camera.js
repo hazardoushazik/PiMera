@@ -33,7 +33,7 @@ class Camera extends Component {
 			<div 
 				className = "CameraContainer CameraImage" 
 				style = {camStyle}>
-				<img  className = "CameraContained CameraImage" 
+				<img  className = "CameraContained CameraImage rounded" 
 							src = {this.state.logoImage} 
 							alt = 'logo'/>
 			</div>
