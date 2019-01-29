@@ -58,7 +58,7 @@ function MainMenu (props) {
     );
 
     return (
-        <nav className = "nav">{menu}</nav>
+        <nav className = "nav btn-group">{menu}</nav>
     );
 }
 
