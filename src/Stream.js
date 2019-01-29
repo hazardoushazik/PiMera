@@ -32,12 +32,12 @@ class Stream extends Component {
 			backgroundImage: `url(${this.state.streamImage})`
 		}
 		return (
-			<div classname = "StreamContainer">
+			<div className = "StreamContainer">
 				<div 
-					classname = "StreamImage StreamContained" 
+					className = "StreamImage StreamContained" 
 					style = {streamStyle}></div>
 				<img 
-					classname = "StreamContained" 
+					className = "StreamContained" 
 					src = {this.state.logoImage} 
 					alt = 'logo'/>
 			</div>
