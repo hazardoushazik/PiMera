@@ -28,7 +28,6 @@ class Stream extends Component {
 			transform: 'rotate(180deg)',
 			backgroundImage: `url(${this.state.streamImage})`,
 			height: '100vh',
-			width: '100vw',
 			backgroundSize: '100% 100%'
 		}
 		return (
