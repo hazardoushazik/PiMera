@@ -47,11 +47,13 @@ const items = [
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <li key = {item.label}><NavLink key = {item.label} to = {item.link}>{item.label}</NavLink></li>
+        <li class="list-group-item" key = {item.label}>
+            <NavLink key = {item.label} to = {item.link}>{item.label}</NavLink>
+        </li>
     );
 
     return (
-        <ul>{menu}</ul>
+        <ul class="list-group">{menu}</ul>
     );
 }
 
