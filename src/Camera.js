@@ -9,7 +9,7 @@ class Camera extends Component {
 	render() {
 		return (
 			<div ref = {this.myRef}>
-				<h2>Camera</h2>
+				<h2>CAMERA</h2>
 				<Stream /> 
 			</div>
 		)
