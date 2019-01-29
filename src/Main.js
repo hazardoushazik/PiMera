@@ -12,6 +12,8 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
+import "./css/Stream.css";
+
 const items = [
     {
         label: "Home",
@@ -47,13 +49,13 @@ const items = [
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <li className = "list-group-item" key = {item.label}>
-            <NavLink key = {item.label} to = {item.link}>{item.label}</NavLink>
+        <li className = "navbar-item list-group-item" key = {item.label}>
+            <NavLink className = "navbar-link" key = {item.label} to = {item.link}>{item.label}</NavLink>
         </li>
     );
 
     return (
-        <ul className = "list-group">{menu}</ul>
+        <ul className = "navbar list-group">{menu}</ul>
     );
 }
 
