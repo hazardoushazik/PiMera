@@ -58,7 +58,7 @@ function MainMenu (props) {
     );
 
     return (
-        <nav className = "nav btn-group d-flex" role = "group">{menu}</nav>
+        <nav className = "nav btn-group" role = "group">{menu}</nav>
     );
 }
 
