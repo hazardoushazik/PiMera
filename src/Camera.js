@@ -6,9 +6,7 @@ class Camera extends Component {
 		return (
 			<div>
 				<h2>Camera</h2>
-				<div>
-					<Stream /> 
-				</div>
+				<Stream /> 
 			</div>
 		)
 	}
