@@ -49,13 +49,11 @@ const items = [
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <li className = "nav-item" key = {item.label}>
-            <NavLink className = "nav-link" key = {item.label} to = {item.link}>{item.label}</NavLink>
-        </li>
+        <NavLink className = "nav-link" key = {item.label} to = {item.link}>{item.label}</NavLink>
     );
 
     return (
-        <ul className = "nav">{menu}</ul>
+        <nav className = "nav flex-row">{menu}</nav>
     );
 }
 
