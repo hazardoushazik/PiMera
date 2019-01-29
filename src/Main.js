@@ -12,7 +12,7 @@ import Camera from "./Camera";
 import Data from "./Data";
 import Settings from "./Settings";
 
-import "./css/Stream.css";
+import "./css/Main.css";
 
 const items = [
     {
