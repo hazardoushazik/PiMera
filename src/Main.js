@@ -55,7 +55,7 @@ function MainMenu (props) {
     );
 
     return (
-        <ul className = "nav list-group">{menu}</ul>
+        <ul className = "navbar-nav list-group">{menu}</ul>
     );
 }
 
