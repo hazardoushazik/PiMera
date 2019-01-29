@@ -21,7 +21,7 @@ class Stream extends Component {
 			() => this.setState({
 				streamImage: `${STREAM_SRC}`,
 			}),
-			50
+			60
 		);
 	}
 	
