@@ -49,7 +49,7 @@ const items = [
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <NavLink  className = "btn btn-primary btn-lg nav-link w-100" 
+        <NavLink  className = "btn btn-primary btn-lg nav-link" 
                        role = "button"
                         key = {item.label} 
                          to = {item.link}>
