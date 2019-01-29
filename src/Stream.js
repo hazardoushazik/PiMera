@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 
-var streamStyle = {
+
+const imgStyle = {
 	transform: 'rotate(180deg)',
-	backgroundImage: 'url(' + `${this.state.streamImage}` + ')'
+	backgroundImage: '' + {STREAM_SRC} + ')'
 }
 
 class Stream extends Component {
@@ -20,9 +21,14 @@ class Stream extends Component {
 			() => this.setState({
 				streamImage: `${STREAM_SRC}`,
 			}),
-			10
+			50
 		);
 	}
+	
+	streamStyle = {
+		color: 'blue',
+		backgroundImage: 'url(' + imgUrl + ')',
+	};
 	
 	componentWillUnmount(nextProps) {
 		clearInterval(this.interval);
@@ -30,7 +36,10 @@ class Stream extends Component {
 	
 	render() {
 		return (
-			<div style = {streamStyle}></div>
+			<div style = {this.streamStyle}></div>
+            <img 	src = {this.state.streamImage}
+                    style = {imgStyle}
+					alt = "This is a stream from my pi camera"/>
 		)
 	}
 }
