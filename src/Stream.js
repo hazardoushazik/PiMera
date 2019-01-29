@@ -26,7 +26,9 @@ class Stream extends Component {
 	render() {
 		var streamStyle = {
 			transform: 'rotate(180deg)',
-			backgroundImage: `url(${this.state.streamImage})`
+			backgroundImage: `url(${this.state.streamImage})`,
+			height: '100vh',
+			width: '100vw',
 		}
 		return (
 			<div style = {streamStyle}></div>
