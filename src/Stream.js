@@ -29,6 +29,7 @@ class Stream extends Component {
 			backgroundImage: `url(${this.state.streamImage})`,
 			height: '100vh',
 			width: '100vw',
+			backgroundSize: '100% 100%'
 		}
 		return (
 			<div style = {streamStyle}></div>
