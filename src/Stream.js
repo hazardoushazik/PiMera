@@ -12,6 +12,7 @@ class Stream extends Component {
 			streamImage: "",
 			logoImage: `${LOGO_SRC}`
 		};
+		this.myRef=null ;
 	}
 
 	componentDidMount() {
@@ -34,7 +35,8 @@ class Stream extends Component {
 		return (
 			<div 
 				className = "StreamContainer StreamImage" 
-				style = {streamStyle}>
+				style = {streamStyle}
+				ref = {(ref) => this.myRef = ref}>
 				<img 
 					className = "StreamContained StreamImage" 
 					src = {this.state.logoImage} 
@@ -42,5 +44,7 @@ class Stream extends Component {
 			</div>
 		)
 	}
+
+	scrollToMyRef = () => window.scrollTo(0, this.myRef.offsetTop);
 }
 export default Stream;
