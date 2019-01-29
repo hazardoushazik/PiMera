@@ -34,7 +34,7 @@ class Stream extends Component {
 		return (
 			<div className = "StreamContainer">
 				<div 
-					className = "StreamImage StreamContained" 
+					className = "StreamContained StreamImage" 
 					style = {streamStyle}></div>
 				<img 
 					className = "StreamContained" 
