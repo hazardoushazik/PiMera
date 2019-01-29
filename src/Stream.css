@@ -1,0 +1,13 @@
+.StreamContainer {
+    position: relative;
+}
+
+.StreamContained {
+    position: absolute;
+}
+
+.StreamImage {
+    transform: rotate(180deg);
+    height: 100vh;
+    background-size: 100% 100%;
+}

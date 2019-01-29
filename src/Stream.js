@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./Stream.css";
+
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 const LOGO_SRC = "images/logo.png";
 
@@ -27,15 +29,17 @@ class Stream extends Component {
 	
 	render() {
 		var streamStyle = {
-			transform: 'rotate(180deg)',
-			backgroundImage: `url(${this.state.streamImage})`,
-			height: '100vh',
-			backgroundSize: '100% 100%'
+			backgroundImage: `url(${this.state.streamImage})`
 		}
 		return (
-			<div>
-				<div style = {streamStyle}></div>
-				<img src = {this.state.logoImage}/>
+			<div classname = "StreamContainer">
+				<div 
+					classname = "StreamImage StreamContained" 
+					style = {streamStyle}></div>
+				<img 
+					classname = "StreamContained" 
+					src = {this.state.logoImage} 
+					alt = 'logo'/>
 			</div>
 		)
 	}
