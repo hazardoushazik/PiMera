@@ -9,7 +9,7 @@ class Stream extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			streamImage: "",
+			streamImage: `${STREAM_SRC}`,
 			logoImage: `${LOGO_SRC}`
 		};
 		this.myRef = React.createRef();
