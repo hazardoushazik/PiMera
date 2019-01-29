@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-const STREAM_SRC = 'http://' + window.location.hostname + ':9000/?action=stream';
+const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 
 class Stream extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			streamImage: ''
+			streamImage: ""
 		};
 	}
 
@@ -18,19 +18,18 @@ class Stream extends Component {
 			60
 		);
 	}
-	
-	streamStyle = {
-		transform: 'rotate(180deg)',
-		backgroundImage: `url(${this.state.streamImage})`
-	}
-	
+		
 	componentWillUnmount(nextProps) {
 		clearInterval(this.interval);
 	}
 	
 	render() {
+		var streamStyle = {
+			transform: 'rotate(180deg)',
+			backgroundImage: `url(${this.state.streamImage})`
+		}
 		return (
-			<div style = {this.streamStyle}></div>
+			<div style = {streamStyle}></div>
 		)
 	}
 }
