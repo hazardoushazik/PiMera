@@ -27,7 +27,7 @@ class Stream extends Component {
 	
 	streamStyle = {
 		color: 'blue',
-		backgroundImage: 'url(' + imgUrl + ')',
+		backgroundImage: 'url(' + this.state.streamImage + ')',
 	};
 	
 	componentWillUnmount(nextProps) {
