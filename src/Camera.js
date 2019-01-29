@@ -1,19 +1,43 @@
 import React, { Component } from "react";
-import Stream from "./Stream";
 
-class Camera extends Component {	
+const CAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
+const LOGO_SRC = "images/logo.png";
+
+class Camera extends Component {
 	constructor(props) {
 		super(props);
-		this.myRef = React.createRef();		
+		this.state = {
+			camImage: `${CAM_SRC}`,
+			logoImage: `${LOGO_SRC}`
+		};
 	}
+
+	componentDidMount() {
+		this.interval = setInterval(
+			() => this.setState({
+				camImage: `${CAM_SRC}`,
+			}),
+			100
+		);
+	}
+		
+	componentWillUnmount(nextProps) {
+		clearInterval(this.interval);
+	}
+	
 	render() {
+		var camStyle = {
+			backgroundImage: `url(${this.state.camImage})`
+		}
 		return (
-			<div ref = {this.myRef}>
-				<h2>CAMERA</h2>
-				<Stream /> 
+			<div 
+				className = "CameraContainer CameraImage" 
+				style = {camStyle}>
+				<img  className = "CameraContained CameraImage" 
+							src = {this.state.logoImage} 
+							alt = 'logo'/>
 			</div>
 		)
 	}
-	scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
 }
 export default Camera;

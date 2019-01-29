@@ -4,7 +4,6 @@ class Settings extends Component {
   render() {
     return (
       <div>
-        <h2>SETTINGS</h2>
         <p>Some site/pi settings</p>
         <ol>
           <li>Setting 1</li>
