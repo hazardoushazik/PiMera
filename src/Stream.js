@@ -2,6 +2,10 @@ import React, { Component } from "react";
 
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 
+var streamStyle = {
+	transform: 'rotate(180deg)',
+	backgroundImage: 'url(' + `${this.state.streamImage}` + ')'
+}
 
 class Stream extends Component {
 	constructor(props) {
@@ -18,11 +22,6 @@ class Stream extends Component {
 			}),
 			10
 		);
-	}
-	
-	streamStyle = {
-		transform: 'rotate(180deg)',
-		backgroundImage: 'url(' + `${this.state.streamImage}` + ')'
 	}
 	
 	componentWillUnmount(nextProps) {
