@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
+const LOGO_SRC = "images/logo.png";
 
 class Stream extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			streamImage: ""
+			streamImage: "",
+			logoImage: `${LOGO_SRC}`
 		};
 	}
 
@@ -31,7 +33,9 @@ class Stream extends Component {
 			backgroundSize: '100% 100%'
 		}
 		return (
-			<div style = {streamStyle}></div>
+			<div style = {streamStyle}>
+				<img src = {this.state.logoImage}/>
+			</div>
 		)
 	}
 }
