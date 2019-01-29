@@ -18,7 +18,7 @@ const items = [
     {
         label: "Home",
         component: Home,
-        link: "/#"
+        link: "/#" // technically the home link is broken since it deletes the current contents and doesnt ever display the home page data but like whatever
     },
     {
         label: "Destinations", 
