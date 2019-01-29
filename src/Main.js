@@ -50,6 +50,7 @@ const items = [
 function MainMenu (props) {
     const menu = props.items.map((item) =>
         <NavLink  className = "btn btn-primary nav-link" 
+                       role = "button"
                         key = {item.label} 
                          to = {item.link}>
             {item.label}
