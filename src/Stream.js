@@ -12,7 +12,6 @@ class Stream extends Component {
 			streamImage: `${STREAM_SRC}`,
 			logoImage: `${LOGO_SRC}`
 		};
-		this.myRef = React.createRef();
 	}
 
 	componentDidMount() {
@@ -34,7 +33,6 @@ class Stream extends Component {
 		}
 		return (
 			<div 
-				ref = {this.myRef}
 				className = "StreamContainer StreamImage" 
 				style = {streamStyle}>
 				<img 
@@ -44,7 +42,5 @@ class Stream extends Component {
 			</div>
 		)
 	}
-
-	scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
 }
 export default Stream;
