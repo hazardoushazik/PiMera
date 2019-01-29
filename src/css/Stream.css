@@ -7,6 +7,8 @@
 
 .StreamContained {
     position: absolute;
+    height: 10vh;
+    width: 10vh;
 }
 
 .StreamImage {
