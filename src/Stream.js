@@ -33,10 +33,9 @@ class Stream extends Component {
 			<div 
 				className = "StreamContainer StreamImage" 
 				style = {streamStyle}>
-				<img 
-					className = "StreamContained StreamImage" 
-					src = {this.state.logoImage} 
-					alt = 'logo'/>
+				<img  className = "StreamContained StreamImage" 
+							src = {this.state.logoImage} 
+							alt = 'logo'/>
 			</div>
 		)
 	}
