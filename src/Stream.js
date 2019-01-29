@@ -21,8 +21,8 @@ class Stream extends Component {
 	
 	streamStyle = {
 		transform: 'rotate(180deg)',
-		backgroundImage: 'url(' + `${this.state.streamImage}` + ')',
-	};
+		backgroundImage: 'url(' + this.state.streamImage + ')'
+	}
 	
 	componentWillUnmount(nextProps) {
 		clearInterval(this.interval);
