@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "./css/Stream.css";
-
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 const LOGO_SRC = "images/logo.png";
 
