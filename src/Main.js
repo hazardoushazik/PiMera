@@ -55,7 +55,7 @@ function MainMenu (props) {
     );
 
     return (
-        <ul className = "navbar-nav">{menu}</ul>
+        <ul className = "nav">{menu}</ul>
     );
 }
 
