@@ -33,7 +33,8 @@ class Stream extends Component {
 			backgroundSize: '100% 100%'
 		}
 		return (
-			<div style = {streamStyle}>
+			<div>
+				<div style = {streamStyle}></div>
 				<img src = {this.state.logoImage}/>
 			</div>
 		)
