@@ -31,16 +31,14 @@ class Stream extends Component {
 		var streamStyle = {
 			backgroundImage: `url(${this.state.streamImage})`
 		}
-		var logoStyle = {
-			backgroundImage: `url(${this.state.logoImage})`
-		}
 		return (
 			<div 
 				className = "StreamContainer StreamImage" 
 				style = {streamStyle}>
-				<div 
-					className = "StreamContained StreamImage"
-					style = {logoStyle}></div>
+				<img 
+					className = "StreamContained StreamImage" 
+					src = {this.state.logoImage} 
+					alt = 'logo'/>
 			</div>
 		)
 	}
