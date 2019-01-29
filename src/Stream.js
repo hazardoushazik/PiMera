@@ -34,7 +34,7 @@ class Stream extends Component {
 		}
 		return (
 			<div 
-				ref = {(ref) => this.myRef = ref}
+				ref = {this.myRef}
 				className = "StreamContainer StreamImage" 
 				style = {streamStyle}>
 				<img 
