@@ -37,9 +37,6 @@ class Stream extends Component {
 	render() {
 		return (
 			<div style = {this.streamStyle}></div>
-            <img 	src = {this.state.streamImage}
-                    style = {imgStyle}
-					alt = "This is a stream from my pi camera"/>
 		)
 	}
 }
