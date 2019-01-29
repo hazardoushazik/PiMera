@@ -57,7 +57,7 @@ function MainMenu (props) {
     );
 
     return (
-        <nav className = "nav flex-row">{menu}</nav>
+        <nav className = "nav">{menu}</nav>
     );
 }
 
