@@ -18,7 +18,7 @@ const items = [
     {
         label: "Home",
         component: Home,
-        link: ""
+        link: "/"
     },
     {
         label: "Destinations", 
