@@ -3,11 +3,6 @@ import React, { Component } from "react";
 const STREAM_SRC = "http://" + window.location.hostname + ":9000/?action=stream";
 
 
-const streamStyle = {
-	transform: 'rotate(180deg)',
-	backgroundImage: '' + {STREAM_SRC} + ')'
-}
-
 class Stream extends Component {
 	constructor(props) {
 		super(props);
@@ -23,6 +18,11 @@ class Stream extends Component {
 			}),
 			10
 		);
+	}
+	
+	streamStyle = {
+		transform: 'rotate(180deg)',
+		backgroundImage: 'url(' + `${this.state.streamImage}` + ')'
 	}
 	
 	componentWillUnmount(nextProps) {
