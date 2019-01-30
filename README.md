@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description
+This is a simple frontend I have made for an offline webcam server and vehicle On-Board Diagnostics (OBD II). The front end is to be loaded on a smartphone or tablet that is being used as a smarthub in a car. Further descriptions and screenshots to be submitted on a later date.
+
 ## Available Scripts
 
 In the project directory, you can run:
