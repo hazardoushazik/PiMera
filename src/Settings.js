@@ -27,7 +27,7 @@ class Settings extends Component {
 			<div className="parentContainer">
 				<h4>Run docker administration commands here</h4>
 				<div style={{flex:1}}>
-                  	<Terminal history={history} structure={structure} extensions={extensions} prefix={"pi@raspberrypi"}/>  
+                  	<Terminal history={history} extensions={extensions} prefix={"pi@raspberrypi"}/>  
 				</div>
 				<div>
 					{this.state.commandData}
