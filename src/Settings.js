@@ -4,7 +4,14 @@ import Terminal from 'react-bash';
 const history = [
     { value: 'Type `help` to begin' },
 ];
-
+const structure = {
+    public: {
+        file1: { content: 'The is the content for file1 in the <public> directory.' },
+        file2: { content: 'The is the content for file2 in the <public> directory.' },
+        file3: { content: 'The is the content for file3 in the <public> directory.' },
+    },
+    'README.md': { content: 'Some readme' },
+};
 
 class Settings extends Component {
 	constructor(props){
@@ -27,7 +34,7 @@ class Settings extends Component {
 			<div className="parentContainer">
 				<h4>Run docker administration commands here</h4>
 				<div style={{flex:1}}>
-                  	<Terminal history={history} extensions={extensions} prefix={"pi@raspberrypi"}/>  
+                  	<Terminal history={history} structure={structure} extensions={extensions} prefix={"pi@raspberrypi"}/>  
 				</div>
 				<div>
 					{this.state.commandData}
