@@ -18,38 +18,44 @@ const items = [
     {
         label: "Home",
         component: Home,
-        link: "/#" // technically the home link is broken since it deletes the current contents and doesnt ever display the home page data but like whatever
+        link: "/#", // technically the home link is broken since it deletes the current contents and doesnt ever display the home page data but like whatever
+        button: "primary"
     },
     {
         label: "Destinations", 
         component: Destinations, 
-        link: "/destinations"
+        link: "/destinations",
+        button: "warning"
     },
     {
         label: "Media",
         component: Media,
-        link: "/media"
+        link: "/media",
+        button: "success"
     },
     {
         label: "Camera",
         component: Camera,
-        link: "/camera"
+        link: "/camera",
+        button: "danger"
     },
     {
         label: "Data", 
         component: Data, 
-        link: "/data"
+        link: "/data",
+        button: "info"
     },
     {
         label: "Settings",
         component: Settings,
-        link: "/settings"
+        link: "/settings",
+        button: "secondary"
     }
 ];
 
 function MainMenu (props) {
     const menu = props.items.map((item) =>
-        <NavLink  className = "btn w-100 btn-primary btn-lg" 
+        <NavLink  className = {"btn w-100 btn-primary btn-lg btn-" + (item.button)}
                        role = "button"
                         key = {item.label} 
                          to = {item.link}>
